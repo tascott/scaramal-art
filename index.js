@@ -1,0 +1,24 @@
+document.addEventListener('scroll', () => {
+    const dots = document.querySelectorAll('.dot');
+    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+    dots.forEach((dot, index) => {
+        const section = index * 25; // Divide the page into 4 sections (100/4 = 25)
+        if (scrollPercentage >= section && scrollPercentage < (section + 25)) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+});
+
+const modeToggle = document.querySelector('.mode-toggle');
+
+modeToggle.addEventListener('click', () => {
+    const body = document.body;
+    if (body.getAttribute('data-mode') === 'dark') {
+        body.removeAttribute('data-mode');
+    } else {
+        body.setAttribute('data-mode', 'dark');
+    }
+});

@@ -1,0 +1,131 @@
+/* Hide scrollbar for all elements */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Additional backup method */
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 500vh;
+    background: linear-gradient(rgba(256, 256, 256, 0.5), rgba(256, 256, 256, 0.5)), url('images/greencropped.jpg') fixed;
+    background-size: cover;
+    background-position: left bottom;
+    position: relative;
+}
+
+body::before {
+    content: none;
+}
+
+/* Dark mode styles */
+body[data-mode="dark"] .mode-toggle .sun-icon {
+    opacity: 0;
+    transform: scale(0);
+}
+
+body[data-mode="dark"] .mode-toggle .moon-icon {
+    opacity: 1;
+    transform: scale(1);
+    stroke: #fff;
+}
+
+body[data-mode="dark"] {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/greencropped.jpg')fixed;
+    background-size: cover;
+    background-position: left bottom;
+}
+
+body[data-mode="dark"] .mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* body[data-mode="dark"] header {
+    background: rgba(0, 0, 0, 0.2);
+} */
+
+body[data-mode="dark"] h1 {
+    color: #fff;
+}
+
+.scroll-indicator {
+    position: fixed;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #333;
+    transform: scale(1.5);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.mode-toggle {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.mode-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.mode-toggle .sun-icon,
+.mode-toggle .moon-icon {
+    position: absolute;
+    stroke: #333;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+}
+
+.mode-toggle .sun-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.mode-toggle .moon-icon {
+    opacity: 0;
+    transform: scale(0);
+}
