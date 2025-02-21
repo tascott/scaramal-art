@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Hoarsely';
+    src: url('fonts/HoarselySingleLine.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Hide scrollbar for all elements */
 * {
     -ms-overflow-style: none;  /* IE and Edge */
@@ -23,6 +31,7 @@ body {
     background-size: cover;
     background-position: left bottom;
     position: relative;
+    font-family: 'GFS Didot', serif;
 }
 
 body::before {
@@ -57,11 +66,13 @@ body[data-mode="dark"] .mode-toggle:hover {
 
 body[data-mode="dark"] h1 {
     color: #fff;
+    font-family: 'Hoarsely', serif;
+    margin: 0;
 }
 
 .scroll-indicator {
     position: fixed;
-    left: 30px;
+    left: 15px;  /* Back to original position */
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -70,16 +81,28 @@ body[data-mode="dark"] h1 {
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background-color: #ccc;
+    border: 2px solid #333;
+    box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
 .dot.active {
     background-color: #333;
-    transform: scale(1.5);
+    transform: scale(1.4);
+    border-color: transparent;
+}
+
+body[data-mode="dark"] .dot {
+    background-color: #ccc;
+    border-color: transparent;
+}
+
+body[data-mode="dark"] .dot.active {
+    background-color: #333;
 }
 
 header {
@@ -87,16 +110,21 @@ header {
     top: 0;
     padding: 20px;
     /* background: rgba(255, 255, 255, 0.1); */
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
+header h1 {
+    font-family: 'Hoarsely', serif;
+    margin: 0;
+}
+
 .mode-toggle {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     position: relative;
     cursor: pointer;
     display: flex;
@@ -115,8 +143,8 @@ header {
 .mode-toggle .moon-icon {
     position: absolute;
     stroke: #333;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     transition: all 0.3s ease;
 }
 
@@ -128,4 +156,88 @@ header {
 .mode-toggle .moon-icon {
     opacity: 0;
     transform: scale(0);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.lang-toggle {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body[data-mode="dark"] .lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+    width: 32px;
+    height: 32px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body[data-mode="dark"] .lang-text {
+    color: #fff;
+}
+
+.lang-toggle:hover .lang-text {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body[data-mode="dark"] .lang-toggle:hover .lang-text {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.container {
+    margin: 15px;
+    margin-left: 45px;  /* 15px default + 30px extra space for dots */
+    min-height: calc(100vh - 30px);
+    width: calc(100% - 60px);  /* Adjusted for increased left margin */
+    background: rgba(255, 255, 255, 0.4);
+    /* backdrop-filter: blur(10px); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Adjust background in dark mode */
+body[data-mode="dark"] .container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .container {
+        margin: 30px;
+        margin-left: 75px;  /* 30px default + 45px extra space for dots */
+        min-height: calc(100vh - 60px);
+        width: calc(100% - 105px);  /* Adjusted for increased left margin */
+    }
+
+    .scroll-indicator {
+        left: 30px;  /* Back to original position */
+    }
 }

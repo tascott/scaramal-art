@@ -22,3 +22,30 @@ modeToggle.addEventListener('click', () => {
         body.setAttribute('data-mode', 'dark');
     }
 });
+
+// Language switching functionality
+const langToggle = document.querySelector('.lang-toggle');
+const langText = langToggle.querySelector('.lang-text');
+const translateElements = document.querySelectorAll('[data-en]');
+
+// Check localStorage for saved language preference
+const savedLang = localStorage.getItem('language') || 'en';
+document.body.setAttribute('data-lang', savedLang);
+updateLanguage(savedLang);
+
+langToggle.addEventListener('click', () => {
+    const currentLang = document.body.getAttribute('data-lang');
+    const newLang = currentLang === 'en' ? 'it' : 'en';
+
+    document.body.setAttribute('data-lang', newLang);
+    localStorage.setItem('language', newLang);
+    updateLanguage(newLang);
+});
+
+function updateLanguage(lang) {
+    langText.textContent = lang.toUpperCase();
+
+    translateElements.forEach(element => {
+        element.textContent = element.getAttribute(`data-${lang}`);
+    });
+}
