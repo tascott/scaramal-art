@@ -66,6 +66,19 @@ body[data-mode="dark"] h1 {
     transform: scale(0);
 }
 
+@media (max-width: 768px) {
+    .mode-toggle .sun-icon,
+    .mode-toggle .moon-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .lang-toggle .lang-text {
+        font-size: 14px;
+        width: 26px;
+        height: 26px;
+    }
+}
+
 .controls {
     display: flex;
     gap: 15px;

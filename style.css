@@ -133,7 +133,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
 }
 
 .container img {
-    height: 80vh;
+    max-height: 50vh;
     width: auto;
     max-width: 100%;
     object-fit: cover;
@@ -241,7 +241,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
 
 @media (max-width: 768px) {
     .events-section h2 {
-        padding-left: 20px;
+        padding-left: 55px;
         font-size: 1.3rem;
     }
 }
@@ -352,10 +352,6 @@ section:not(#sectionPin, .pin-wrap-sticky) {
         text-align: left;
     }
 
-    .events-container {
-        min-height: 450px;
-    }
-
     .slider-btn svg {
         width: 36px;
         height: 36px;
@@ -369,6 +365,10 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     width: 60%;
     max-width: 600px;
     z-index: 4;
+}
+
+.bio-container {
+    padding: 20px;
 }
 
 .bio p {
@@ -391,5 +391,18 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     /* Adjust events section to accommodate bio */
     .events-section {
         top: 45vh;
+    }
+}
+
+/* Add this to your existing CSS */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
     }
 }
