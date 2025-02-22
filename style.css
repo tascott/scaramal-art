@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Hoarsely';
-    src: url('https://raw.githubusercontent.com/tascott/scaramal-art/main/fonts/HoarselySingleLine.ttf') format('truetype');
+    src: url('fonts/HoarselySingleLine.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
