@@ -1,25 +1,3 @@
-@font-face {
-    font-family: 'Hoarsely';
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    src: url('fonts/HoarselySingleLine.woff2') format('woff2'),
-    url('fonts/HoarselySingleLine.woff') format('woff'),
-    url('fonts/HoarselySingleLine.ttf') format('truetype'),
-    url('fonts/HoarselySingleLine.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'Hoarsely2';
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-    src: url('./fonts/HoarselySingleLine.woff2') format('woff2'),
-        url('./fonts/HoarselySingleLine.woff') format('woff'),
-        url('./fonts/HoarselySingleLine.ttf') format('truetype'),
-        url('./fonts/HoarselySingleLine.otf') format('otf');
-}
-
 :root {
     --text-color: #111;
     --bg-color: #b9b3a9;
@@ -108,14 +86,6 @@ header {
     .header-inner {
         padding: 0.5rem 1rem;
     }
-}
-
-h1 {
-    font-family: 'Hoarsely', serif;
-}
-
-h1#title2 {
-    font-family: 'Hoarsely2', serif;
 }
 
 .events-inner {
