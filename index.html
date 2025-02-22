@@ -44,7 +44,7 @@
 
             .pin-wrap {
                 height: 100vh;
-                width: 250vmax;
+                width: 333vmax;
 
                 /* Hook animation */
                 will-change: transform;
@@ -60,34 +60,99 @@
 
 <body>
     <header>
-        <div class="controls">
-            <div class="mode-toggle">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5" />
-                    <line x1="12" y1="1" x2="12" y2="3" />
-                    <line x1="12" y1="21" x2="12" y2="23" />
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                    <line x1="1" y1="12" x2="3" y2="12" />
-                    <line x1="21" y1="12" x2="23" y2="12" />
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-            </div>
-            <div class="lang-toggle" title="Switch Language">
-                <span class="lang-text">EN</span>
+        <div class="header-inner">
+            <nav class="section-nav">
+                <a href="#sectionPin" data-en="Gallery" data-it="Galleria">Gallery</a>
+                <a href="#contact" data-en="Contact" data-it="Contatti">Contact</a>
+            </nav>
+            <div class="controls">
+                <div class="mode-toggle">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </div>
+                <div class="lang-toggle" title="Switch Language">
+                    <span class="lang-text">EN</span>
+                </div>
             </div>
         </div>
     </header>
     <div class="container">
-        <section>
-            <div>
-                <h1><span>Scaramal Art</span></h1>
+        <section id="events">
+            <div class="events-inner">
+                <div class="bio-container">
+                    <h1><span data-en="Scaramal Art" data-it="Arte Scaramal">Scaramal Art</span></h1>
+                    <div class="bio">
+                        <p data-en="Contemporary artist based in Rome, specializing in portrait and figure studies that explore human emotion and identity through bold colors and dynamic compositions."
+                            data-it="Artista contemporanea con sede a Roma, specializzata in ritratti e studi di figura che esplorano l'emozione e l'identità umana attraverso colori vivaci e composizioni dinamiche.">
+                            Contemporary artist based in Rome, specializing in portrait and figure studies that explore
+                            human emotion and identity through bold colors and dynamic compositions.
+                        </p>
+                    </div>
+                </div>
+                <div class="events-section">
+                    <h2 data-en="Upcoming Events" data-it="Prossimi Eventi">Upcoming Events</h2>
+                    <div class="events-slider">
+                        <button class="slider-btn prev" aria-label="Previous event">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="events-container">
+                            <div class="event-slide">
+                                <img src="../images/gallery.jpeg" alt="Event 1">
+                                <div class="event-info">
+                                    <h3 data-en="Exhibition in Rome" data-it="Mostra a Roma">Exhibition in Rome</h3>
+                                    <p data-en="Join us for an evening of art and wine"
+                                        data-it="Unisciti a noi per una serata di arte e vino">
+                                        Join us for an evening of art and wine
+                                    </p>
+                                    <span class="date">12.05.2024</span>
+                                </div>
+                            </div>
+                            <div class="event-slide">
+                                <img src="../images/studio2.jpg" alt="Event 2">
+                                <div class="event-info">
+                                    <h3 data-en="Gallery Opening" data-it="Apertura Galleria">Gallery Opening</h3>
+                                    <p data-en="New collection preview" data-it="Anteprima della nuova collezione">
+                                        New collection preview
+                                    </p>
+                                    <span class="date">20.06.2024</span>
+                                </div>
+                            </div>
+                            <!-- <div class="event-slide">
+                                <img src="../images/event3.jpg" alt="Event 3">
+                                <div class="event-info">
+                                    <h3 data-en="Art Workshop" data-it="Workshop d'Arte">Art Workshop</h3>
+                                    <p data-en="Learn the techniques" data-it="Impara le tecniche">
+                                        Learn the techniques
+                                    </p>
+                                    <span class="date">15.07.2024</span>
+                                </div>
+                            </div> -->
+                        </div>
+                        <button class="slider-btn next" aria-label="Next event">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="sectionPin">
@@ -102,9 +167,19 @@
                 </div>
             </div>
         </section>
-        <section><img src="../shared/pexels-photo-4791474.jpeg" alt="">
-            <h2 class="contact">
-                Contact </h2>
+        <section id="contact">
+            <div class="contact-info">
+                <h2 class="contact" data-en="Contact" data-it="Contatti">Contact</h2>
+                <p class="email">
+                    <span data-en="Email:" data-it="Email:">Email:</span>
+                    <a href="mailto:info@scaramalart.com">info@scaramalart.com</a>
+                </p>
+                <p class="phone">
+                    <span data-en="Phone:" data-it="Telefono:">Phone:</span>
+                    <a href="tel:+39123456789">+39 123 456 789</a>
+                </p>
+            </div>
+            <img src="../images/bea.jpeg" alt="">
         </section>
     </div>
 
@@ -113,7 +188,6 @@
         <div class="dot" data-index="1"></div>
         <div class="dot" data-index="2"></div>
         <div class="dot" data-index="3"></div>
-        <div class="dot" data-index="4"></div>
     </div>
     <script src="index.js"></script>
 </body>

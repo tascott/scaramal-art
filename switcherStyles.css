@@ -10,12 +10,6 @@ body[data-mode="dark"] .mode-toggle .moon-icon {
     stroke: #fff;
 }
 
-body[data-mode="dark"] {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/greencropped.jpg')fixed;
-    background-size: cover;
-    background-position: left bottom;
-}
-
 body[data-mode="dark"] .mode-toggle:hover {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -25,9 +19,9 @@ body[data-mode="dark"] .mode-toggle:hover {
 } */
 
 /* Adjust background in dark mode */
-body[data-mode="dark"] .container {
+/* body[data-mode="dark"] .container {
     background: rgba(0, 0, 0, 0.1);
-}
+} */
 
 body[data-mode="dark"] h1 {
     color: #fff;
@@ -145,6 +139,13 @@ body[data-mode="dark"] .lang-toggle:hover .lang-text {
     border: 2px solid #333;
     box-sizing: border-box;
     transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 .dot.active {
