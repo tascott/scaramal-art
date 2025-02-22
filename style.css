@@ -199,6 +199,8 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     padding: 0 5vmax;
 }
 
+.pin-wrap > h2 {
+    min-width: 40vmax;
     padding: 0 1vmax;
 }
 
