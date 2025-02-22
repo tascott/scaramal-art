@@ -3,7 +3,7 @@ document.addEventListener('scroll', () => {
     const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
 
     dots.forEach((dot, index) => {
-        const section = index * 25; // Divide the page into 4 sections (100/4 = 25)
+        const section = index * 25;
         if (scrollPercentage >= section && scrollPercentage < (section + 25)) {
             dot.classList.add('active');
         } else {

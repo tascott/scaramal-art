@@ -1,0 +1,163 @@
+/* Dark mode General styles */
+body[data-mode="dark"] .mode-toggle .sun-icon {
+    opacity: 0;
+    transform: scale(0);
+}
+
+body[data-mode="dark"] .mode-toggle .moon-icon {
+    opacity: 1;
+    transform: scale(1);
+    stroke: #fff;
+}
+
+body[data-mode="dark"] {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/greencropped.jpg')fixed;
+    background-size: cover;
+    background-position: left bottom;
+}
+
+body[data-mode="dark"] .mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* body[data-mode="dark"] header {
+    background: rgba(0, 0, 0, 0.2);
+} */
+
+/* Adjust background in dark mode */
+body[data-mode="dark"] .container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body[data-mode="dark"] h1 {
+    color: #fff;
+}
+
+
+/* Mode and Lang Toggle */
+
+.mode-toggle {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.mode-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.mode-toggle .sun-icon,
+.mode-toggle .moon-icon {
+    position: absolute;
+    stroke: #333;
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+}
+
+.mode-toggle .sun-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.mode-toggle .moon-icon {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.lang-toggle {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body[data-mode="dark"] .lang-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+    width: 32px;
+    height: 32px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body[data-mode="dark"] .lang-text {
+    color: #fff;
+}
+
+.lang-toggle:hover .lang-text {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body[data-mode="dark"] .lang-toggle:hover .lang-text {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Scroll Dots */
+.scroll-indicator {
+    position: fixed;
+    left: 15px;
+    /* Back to original position */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: 2px solid #333;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #333;
+    transform: scale(1.4);
+    border-color: transparent;
+}
+
+body[data-mode="dark"] .dot {
+    background-color: #ccc;
+    border-color: #fff;
+}
+
+body[data-mode="dark"] .dot.active {
+    background-color: #333;
+}
