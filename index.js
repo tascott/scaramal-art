@@ -1,3 +1,23 @@
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+console.log(`User prefers ${prefersDarkScheme.matches ? 'dark' : 'light'} mode by default`);
+
+// Set initial mode based on user preference
+if (prefersDarkScheme.matches) {
+    document.body.setAttribute('data-mode', 'dark');
+} else {
+    document.body.removeAttribute('data-mode');
+}
+
+// Listen for changes to color scheme preference
+prefersDarkScheme.addEventListener('change', (e) => {
+    console.log(`User switched to ${e.matches ? 'dark' : 'light'} mode`);
+    if (e.matches) {
+        document.body.setAttribute('data-mode', 'dark');
+    } else {
+        document.body.removeAttribute('data-mode');
+    }
+});
+
 document.addEventListener('scroll', () => {
     const dots = document.querySelectorAll('.dot');
     const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
@@ -10,6 +30,20 @@ document.addEventListener('scroll', () => {
             dot.classList.remove('active');
         }
     });
+
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+
+    const currentScroll = window.scrollY;
+
+    // Add/remove class based on scroll position
+    if (currentScroll > 50) {
+        header.classList.add('header-scrolled');
+    } else {
+        header.classList.remove('header-scrolled');
+    }
+
+    lastScroll = currentScroll;
 });
 
 const modeToggle = document.querySelector('.mode-toggle');
@@ -18,18 +52,34 @@ modeToggle.addEventListener('click', () => {
     const body = document.body;
     if (body.getAttribute('data-mode') === 'dark') {
         body.removeAttribute('data-mode');
+        console.log('Switched to light mode manually');
     } else {
         body.setAttribute('data-mode', 'dark');
+        console.log('Switched to dark mode manually');
     }
 });
 
-// Language switching functionality
+// Language detection and switching functionality
 const langToggle = document.querySelector('.lang-toggle');
 const langText = langToggle.querySelector('.lang-text');
 const translateElements = document.querySelectorAll('[data-en]');
 
-// Check localStorage for saved language preference
-const savedLang = localStorage.getItem('language') || 'en';
+// Detect user's preferred language
+function detectUserLanguage() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    console.log(`User's browser language: ${browserLang}`);
+
+    // Check if it starts with 'it' for Italian
+    if (browserLang.startsWith('it')) {
+        return 'it';
+    }
+    return 'en'; // Default to English
+}
+
+// Get language from localStorage or detect it
+const savedLang = localStorage.getItem('language') || detectUserLanguage();
+console.log(`Using language: ${savedLang} (${savedLang === localStorage.getItem('language') ? 'from storage' : 'detected'})`);
+
 document.body.setAttribute('data-lang', savedLang);
 updateLanguage(savedLang);
 
@@ -40,6 +90,7 @@ langToggle.addEventListener('click', () => {
     document.body.setAttribute('data-lang', newLang);
     localStorage.setItem('language', newLang);
     updateLanguage(newLang);
+    console.log(`Language manually switched to: ${newLang}`);
 });
 
 function updateLanguage(lang) {
@@ -71,3 +122,23 @@ nextBtn?.addEventListener('click', () => showSlide(currentSlide + 1));
 
 // Show first slide initially
 showSlide(0);
+
+// GSAP Horizontal Scroll
+gsap.registerPlugin(ScrollTrigger);
+
+const horizontalScroll = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#sectionPin",
+        start: "top top",
+        end: () => `+=${document.querySelector(".pin-wrap").offsetWidth - window.innerWidth}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+    }
+});
+
+horizontalScroll.to(".pin-wrap", {
+    x: () => -(document.querySelector(".pin-wrap").offsetWidth - window.innerWidth),
+    ease: "none"
+});

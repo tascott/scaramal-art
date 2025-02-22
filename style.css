@@ -65,6 +65,7 @@ header {
     width: 100%;
     position: fixed;
     z-index: 100;
+    transition: background-color 0.3s ease;
 }
 
 .header-inner {
@@ -72,6 +73,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        padding: 0.5rem 1rem;
+    }
 }
 
 h1 {
@@ -166,21 +173,25 @@ section:not(#sectionPin, .pin-wrap-sticky) {
 }
 
 #sectionPin {
-    height: 500vh;
-    overflow: visible;
-    view-timeline-name: --section-pin-tl;
-    view-timeline-axis: block;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.pin-wrap-sticky {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 }
 
 .pin-wrap {
     height: 100vh;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     padding: 50px 10vw;
+    width: max-content;
 }
 
-.pin-wrap>* {
+.pin-wrap > * {
     min-width: 60vmax;
     padding: 0 5vmax;
 }
@@ -231,6 +242,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     top: 40vh;
     left: 10vw;
     width: 80vw;
+    display: none;
 }
 
 .events-section h2 {
@@ -405,4 +417,14 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     :root {
         color-scheme: light;
     }
+}
+
+/* Add these new styles */
+.header-scrolled {
+    background-color: rgba(185, 179, 169, 0.3); /* Light mode background with 30% opacity */
+    backdrop-filter: blur(8px);
+}
+
+body[data-mode="dark"] .header-scrolled {
+    background-color: rgba(17, 17, 17, 0.3); /* Dark mode background with 30% opacity */
 }
