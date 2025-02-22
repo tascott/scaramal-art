@@ -1,9 +1,23 @@
 @font-face {
     font-family: 'Hoarsely';
-    src: url('fonts/HoarselySingleLine.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
+    src: url('fonts/HoarselySingleLine.woff2') format('woff2'),
+    url('fonts/HoarselySingleLine.woff') format('woff'),
+    url('fonts/HoarselySingleLine.ttf') format('truetype'),
+    url('fonts/HoarselySingleLine.otf') format('otf');
+}
+
+@font-face {
+    font-family: 'Hoarsely2';
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url('./fonts/HoarselySingleLine.woff2') format('woff2'),
+        url('./fonts/HoarselySingleLine.woff') format('woff'),
+        url('./fonts/HoarselySingleLine.ttf') format('truetype'),
+        url('./fonts/HoarselySingleLine.otf') format('otf');
 }
 
 :root {
@@ -98,6 +112,10 @@ header {
 
 h1 {
     font-family: 'Hoarsely', serif;
+}
+
+h1#title2 {
+    font-family: 'Hoarsely2', serif;
 }
 
 .events-inner {
