@@ -88,6 +88,27 @@ header {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+    }
+}
+
+.header-scrolled {
+    background-color: rgba(185, 179, 169, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+body[data-mode="dark"] .header-scrolled {
+    background-color: rgba(17, 17, 17, 0.3);
+}
+
 .events-inner {
     height: 100%;
     max-height: 100%;
@@ -194,12 +215,12 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     width: max-content;
 }
 
-.pin-wrap > * {
+.pin-wrap>* {
     min-width: 60vmax;
     padding: 0 5vmax;
 }
 
-.pin-wrap > h2 {
+.pin-wrap>h2 {
     min-width: 40vmax;
     padding: 0 1vmax;
 }
@@ -250,7 +271,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     top: 40vh;
     left: 10vw;
     width: 80vw;
-    display: none;
+    /* display: none; */
 }
 
 .events-section h2 {
@@ -380,7 +401,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
 
 .bio {
     /* position: absolute; */
-    top: calc(10vw + 4rem);  /* Position below h1 */
+    top: calc(10vw + 4rem);
     left: 10vw;
     width: 60%;
     max-width: 600px;
@@ -408,31 +429,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
         font-size: 1rem;
     }
 
-    /* Adjust events section to accommodate bio */
     .events-section {
         top: 45vh;
     }
-}
-
-/* Add this to your existing CSS */
-@media (prefers-color-scheme: dark) {
-    :root {
-        color-scheme: dark;
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        color-scheme: light;
-    }
-}
-
-/* Add these new styles */
-.header-scrolled {
-    background-color: rgba(185, 179, 169, 0.3); /* Light mode background with 30% opacity */
-    backdrop-filter: blur(8px);
-}
-
-body[data-mode="dark"] .header-scrolled {
-    background-color: rgba(17, 17, 17, 0.3); /* Dark mode background with 30% opacity */
 }
