@@ -69,9 +69,17 @@
                     <div class="events-slider">
                         <div class="events-container">
                             <div class="event-slide">
-                                <img src="images/gallery.jpeg" alt="Event 1">
+                                <div class="event-images">
+                                    <img src="images/exhibitionframed.jpeg" alt="Exhibition piece 1"
+                                        onclick="openLightbox(this.src)">
+                                    <img src="images/redwoman.jpg" alt="Exhibition piece 2"
+                                        onclick="openLightbox(this.src)">
+                                </div>
                                 <div class="event-info">
-                                    <h3 data-en="Exhibition in Biella" data-it="Mostra a Roma">Exhibition in Biella</h3>
+                                    <h3>
+                                        <span data-en="Exhibition in Biella" data-it="Mostra a Biella">Exhibition in
+                                            Biella</span>
+                                    </h3>
                                     <p class="italian">
                                         Volti, storie, emozioni: la mostra Ritratti Urbani unisce arte e fotografia in
                                         un percorso intimo e profondo. Beatrice
@@ -91,6 +99,28 @@
                                         Info e appuntamenti: <a href="tel:+393497252121">+39 349 7252121</a>
                                         <br>
                                         Mostra in collaborazione con <a href="https://www.instagram.com/dropin_biella/"
+                                            target="_blank">@dropin_biella</a>
+                                    </p>
+                                    <p class="english">
+                                        Faces, stories, emotions: the exhibition Urban Portraits combines art and
+                                        photography in an intimate and profound
+                                        journey. Beatrice Scaramal exhibits 11 acrylic portraits, accompanied by
+                                        personal stories that explore human diversity
+                                        and transform stereotypes into stories of symbolic value.
+                                        <br>
+                                        <br>
+                                        Opening:
+                                        Friday, 31 January 2025, 6 p.m. to 1 March 2025
+                                        <br><strong>BI-BOx Art Space, Via Italia 38, Biella</strong>
+                                        <br>
+                                        Opening hours: Thursday and Friday: 15.00 - 19.30
+                                        <br>
+                                        Saturday: 10.00 - 12.30 and 15.00 - 19.30
+                                        <br>
+                                        Info and appointments: <a href="tel:+393497252121">+39 349 7252121</a>
+                                        <br>
+                                        Exhibition in collaboration with <a
+                                            href="https://www.instagram.com/dropin_biella/"
                                             target="_blank">@dropin_biella</a>
                                     </p>
 
@@ -147,6 +177,9 @@
         <div class="dot" data-index="1"></div>
         <div class="dot" data-index="2"></div>
         <div class="dot" data-index="3"></div>
+    </div>
+    <div class="lightbox" onclick="closeLightbox()">
+        <img src="" alt="Lightbox image">
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
