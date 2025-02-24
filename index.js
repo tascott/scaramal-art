@@ -126,11 +126,12 @@ showSlide(0);
 // GSAP Horizontal Scroll
 gsap.registerPlugin(ScrollTrigger);
 
-const horizontalScroll = gsap.timeline({
+// First horizontal scroll section
+const horizontalScroll1 = gsap.timeline({
     scrollTrigger: {
         trigger: "#sectionPin",
         start: "top top",
-        end: () => `+=${document.querySelector(".pin-wrap").offsetWidth - window.innerWidth}`,
+        end: () => `+=${document.querySelector("#sectionPin .pin-wrap").offsetWidth - window.innerWidth}`,
         pin: true,
         scrub: 1,
         invalidateOnRefresh: true,
@@ -138,8 +139,44 @@ const horizontalScroll = gsap.timeline({
     }
 });
 
-horizontalScroll.to(".pin-wrap",{
-    x: () => -(document.querySelector(".pin-wrap").offsetWidth - window.innerWidth),
+horizontalScroll1.to("#sectionPin .pin-wrap", {
+    x: () => -(document.querySelector("#sectionPin .pin-wrap").offsetWidth - window.innerWidth),
+    ease: "none"
+});
+
+// Second horizontal scroll section
+const horizontalScroll2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#sectionPin2",
+        start: "top top",
+        end: () => `+=${document.querySelector("#sectionPin2 .pin-wrap").offsetWidth - window.innerWidth}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+    }
+});
+
+horizontalScroll2.to("#sectionPin2 .pin-wrap", {
+    x: () => -(document.querySelector("#sectionPin2 .pin-wrap").offsetWidth - window.innerWidth),
+    ease: "none"
+});
+
+// Third horizontal scroll section
+const horizontalScroll3 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#sectionPin3",
+        start: "top top",
+        end: () => `+=${document.querySelector("#sectionPin3 .pin-wrap").offsetWidth - window.innerWidth}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+    }
+});
+
+horizontalScroll3.to("#sectionPin3 .pin-wrap", {
+    x: () => -(document.querySelector("#sectionPin3 .pin-wrap").offsetWidth - window.innerWidth),
     ease: "none"
 });
 

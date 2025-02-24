@@ -563,6 +563,7 @@ body[data-lang="it"] .italian.inline {
     font-size: 1.2rem;
     line-height: 1.6;
     opacity: 0.9;
+    margin-left: 0;
 }
 
 @media (max-width: 768px) {
