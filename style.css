@@ -160,7 +160,7 @@ body[data-mode="dark"] .header-scrolled {
     position: relative;
 }
 
-section:not(#sectionPin, .pin-wrap-sticky) {
+section:not(#sectionPin, .pin-wrap-sticky, #description) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 2rem;
@@ -190,8 +190,14 @@ section:not(#sectionPin, .pin-wrap-sticky) {
 }
 
 .container h2 {
-    font-size: 2rem;
-    max-width: 400px;
+    font-size: 1.5rem;
+    /* max-width: 400px; */
+}
+
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 1rem;
+    }
 }
 
 .contact a {
@@ -221,12 +227,30 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     width: max-content;
 }
 
-.pin-wrap>* {
+.pin-wrap > figure {
     min-width: 60vmax;
     padding: 0 5vmax;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 
-.pin-wrap>h2 {
+.pin-wrap > figure img {
+    width: auto;
+    height: 70vh;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.pin-wrap > figure figcaption {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+.pin-wrap > h2 {
     min-width: 40vmax;
     padding: 0 1vmax;
 }
@@ -269,6 +293,16 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     .contact-info {
         order: 2;
         padding-top: 2rem;
+    }
+
+    .pin-wrap > figure img {
+        height: 50vh;
+        width: auto;
+    }
+
+    .pin-wrap > figure {
+        min-width: 80vw;
+        padding: 0 2vmax;
     }
 }
 
@@ -408,13 +442,14 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     /* position: absolute; */
     top: calc(10vw + 4rem);
     left: 10vw;
-    width: 60%;
-    max-width: 600px;
+    /* width: 60%;
+    max-width: 600px; */
     z-index: 4;
 }
 
 .bio-container {
     padding-top: 60px;
+    padding-bottom: 40px;
 }
 
 .bio p {
@@ -514,4 +549,29 @@ body[data-lang="en"] .english.inline {
 
 body[data-lang="it"] .italian.inline {
     display: inline;
+}
+
+#description {
+    min-height: auto;
+    padding: 2rem 10vw;
+    display: block;
+}
+
+#description h2 {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    #description {
+        padding: 1rem 5vw;
+        padding-left: 9vw;
+    }
+
+    #description h3 {
+        font-size: 0.95rem;
+    }
 }
