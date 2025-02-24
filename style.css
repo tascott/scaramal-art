@@ -114,7 +114,13 @@ body[data-mode="dark"] .header-scrolled {
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center
+}
+
+@media (max-width: 768px) {
+    .events-inner {
+        justify-content: flex-start;
+    }
 }
 
 .controls {
@@ -270,19 +276,19 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     /* position: absolute; */
     top: 40vh;
     left: 10vw;
-    width: 80vw;
+    width: 75vw;
     /* display: none; */
 }
 
 .events-section h2 {
     margin-bottom: 2rem;
     font-size: 2rem;
-    padding-left: 70px;
+    padding-left: 0px;
 }
 
 @media (max-width: 768px) {
     .events-section h2 {
-        padding-left: 55px;
+        padding-left: 0px;
         font-size: 1.3rem;
     }
 }
@@ -292,7 +298,6 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-left: -0.5rem;
 }
 
 .events-container {
@@ -374,7 +379,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
     .events-section {
         top: 30vh;
         left: 5vw;
-        width: 90vw;
+        width: 75vw;
     }
 
     .event-slide {
@@ -409,7 +414,7 @@ section:not(#sectionPin, .pin-wrap-sticky) {
 }
 
 .bio-container {
-    padding: 20px;
+    padding-top: 20px;
 }
 
 .bio p {
