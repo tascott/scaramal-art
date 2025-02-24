@@ -9,22 +9,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="switcherStyles.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
     <header>
         <div class="header-inner">
             <nav class="section-nav">
-                <a href="#sectionPin" data-en="Gallery" data-it="Galleria">Gallery</a>
-                <a href="#contact" data-en="Contact" data-it="Contatti">Contact</a>
+                <a href="#home" class="active" data-section="home">Home</a>
+                <a href="#gallery" data-section="gallery">Gallery</a>
+                <a href="#contact" data-section="contact">Contact</a>
+                <a href="https://www.instagram.com/scaramal_art/" target="_blank" class="instagram-link">
+                    <svg class="instagram-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
             </nav>
             <div class="controls">
                 <div class="mode-toggle">
@@ -51,17 +56,159 @@
             </div>
         </div>
     </header>
-    <div class="container">
-        <section id="mainInfo">
-        </section>
-        <section id="gallery">
-        </section>
-        <section id="contact">
 
+    <main>
+        <section id="home" class="active">
+            <div class="events-inner">
+                <div class="bio-container">
+                    <h1><span data-en="Scaramal Art" data-it="Arte Scaramal">Scaramal Art</span></h1>
+                    <div class="bio">
+                        <!-- <p data-en="Contemporary artist, based in Biella, specializing in portrait and figure studies that explore human emotion and identity through bold colors and dynamic compositions."
+                                    data-it="Artista contemporanea con sede a Roma, specializzata in ritratti e studi di figura che esplorano l'emozione e l'identità umana attraverso colori vivaci e composizioni dinamiche.">
+                                    Contemporary artist based in Biella, specializing in portrait and figure studies that
+                                    explore
+                                    human emotion and identity through bold colors and dynamic compositions.
+                                </p> -->
+                    </div>
+                </div>
+                <div class="events-section">
+                    <h2 data-en="Events" data-it="Eventi">Events</h2>
+                    <div class="events-slider">
+                        <div class="events-container">
+                            <div class="event-slide">
+                                <div class="event-images">
+                                    <img src="images/exhibitionframed.jpeg" alt="Exhibition piece 1"
+                                        onclick="openLightbox(this.src)">
+                                    <img src="images/redwoman.jpg" alt="Exhibition piece 2"
+                                        onclick="openLightbox(this.src)">
+                                </div>
+                                <div class="event-info">
+                                    <h3>
+                                        <span data-en="Exhibition in Biella" data-it="Mostra a Biella">Exhibition in
+                                            Biella</span>
+                                    </h3>
+                                    <p class="italian">
+                                        Volti, storie, emozioni: la mostra Ritratti Urbani unisce arte e fotografia
+                                        in
+                                        un percorso intimo e profondo. Beatrice
+                                        Scaramal espone 11 ritratti in acrilico, accompagnati da racconti personali
+                                        che
+                                        esplorano la diversità umana e
+                                        trasformano gli stereotipi in storie di valore simbolico.
+                                        <br>
+                                        <br>
+                                        Inaugurazione:
+                                        Venerdì 31 gennaio 2025, ore 18.00 al 1° marzo 2025
+                                        <br><strong>BI-BOx Art Space, Via Italia 38, Biella</strong>
+                                        <br>
+                                        Orari: Giovedì e venerdì: 15.00 - 19.30
+                                        <br>
+                                        Sabato: 10.00 - 12.30 e 15.00 - 19.30
+                                        <br>
+                                        Info e appuntamenti: <a href="tel:+393497252121">+39 349 7252121</a>
+                                        <br>
+                                        Mostra in collaborazione con <a href="https://www.instagram.com/dropin_biella/"
+                                            target="_blank">@dropin_biella</a>
+                                    </p>
+                                    <p class="english">
+                                        Faces, stories, emotions: the exhibition Urban Portraits combines art and
+                                        photography in an intimate and profound
+                                        journey. Beatrice Scaramal exhibits 11 acrylic portraits, accompanied by
+                                        personal stories that explore human diversity
+                                        and transform stereotypes into stories of symbolic value.
+                                        <br>
+                                        <br>
+                                        Opening:
+                                        Friday, 31 January 2025, 6 p.m. to 1 March 2025
+                                        <br><strong>BI-BOx Art Space, Via Italia 38, Biella</strong>
+                                        <br>
+                                        Opening hours: Thursday and Friday: 15.00 - 19.30
+                                        <br>
+                                        Saturday: 10.00 - 12.30 and 15.00 - 19.30
+                                        <br>
+                                        Info and appointments: <a href="tel:+393497252121">+39 349 7252121</a>
+                                        <br>
+                                        Exhibition in collaboration with <a
+                                            href="https://www.instagram.com/dropin_biella/"
+                                            target="_blank">@dropin_biella</a>
+                                    </p>
+
+                                    <span class="date">31.01.2025 - 01.03.2025</span>
+                                </div>
+                            </div>
+                            <div class="event-slide">
+                                <img src="images/studio2.jpg" alt="Event 2">
+                                <div class="event-info">
+                                    <h3 data-en="Gallery Opening" data-it="Apertura Galleria">Gallery Opening</h3>
+                                    <p data-en="New collection preview" data-it="Anteprima della nuova collezione">
+                                        New collection preview
+                                    </p>
+                                    <span class="date">20.06.2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <section id="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item wide"><img src="images/woman2.jpeg" alt="Art piece 1"
+                        onclick="openLightbox(this.src)"></div>
+                <div class="gallery-item"><img src="images/face-color.jpg" alt="Art piece 2"
+                        onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item tall"><img src="images/men.jpg" alt="Art piece 3"
+                        onclick="openLightbox(this.src)"></div>
+                <div class="gallery-item"><img src="images/man2.jpeg" alt="Art piece 4"
+                        onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item wide"><img src="images/portrait2.jpeg" alt="Art piece 5"
+                        onclick="openLightbox(this.src)"></div>
+                <div class="gallery-item"><img src="images/redwoman.jpg" alt="Art piece 6"
+                        onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item tall"><img src="images/woman.jpg" alt="Art piece 7"
+                        onclick="openLightbox(this.src)"></div>
+                <div class="gallery-item"><img src="images/man3.jpeg" alt="Art piece 8"
+                        onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item"><img src="images/man.jpeg" alt="Art piece 9" onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item"><img src="images/portrait.jpeg" alt="Art piece 10"
+                        onclick="openLightbox(this.src)">
+                </div>
+                <div class="gallery-item"><img src="images/man4.jpg" alt="Art piece 11"
+                        onclick="openLightbox(this.src)">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-info">
+                <h2 data-en="Contact" data-it="Contatti">Contact</h2>
+                <p class="email">
+                    <span data-en="Email:" data-it="Email:">Email:</span>
+                    <a href="mailto:info@scaramalart.com">info@scaramalart.com</a>
+                </p>
+                <p class="phone">
+                    <span data-en="Phone:" data-it="Telefono:">Phone:</span>
+                    <a href="tel:+393497252121">+39 349 7252121</a>
+                </p>
+                <p>
+                    <a href="https://www.instagram.com/scaramal_art/" target="_blank">@scaramal_art</a>
+                </p>
+            </div>
+            <img src="images/bea2.jpg" alt="Beatrice Scaramal" class="contact-image">
+        </section>
+    </main>
+
+    <div class="lightbox" onclick="closeLightbox()">
+        <button class="close-lightbox" onclick="closeLightbox()">×</button>
+        <img src="" alt="Lightbox image">
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <script src="index2.js"></script>
 </body>
 

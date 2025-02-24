@@ -67,8 +67,97 @@ langToggle.addEventListener('click',() => {
 function updateLanguage(lang) {
     langText.textContent = lang.toUpperCase();
 
+    // Update data-attribute elements
     translateElements.forEach(element => {
         element.textContent = element.getAttribute(`data-${lang}`);
     });
+
+    // Update body attribute for language-specific styles
+    document.body.setAttribute('data-lang',lang);
 }
 
+// Navigation
+document.querySelectorAll('.section-nav a').forEach(link => {
+    link.addEventListener('click',(e) => {
+        e.preventDefault();
+        const sectionId = link.dataset.section;
+        console.log('Clicked section:',sectionId);
+        if(!sectionId) return;
+
+        // Update active states
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+            console.log('Removed active from:',section.id);
+        });
+        document.querySelectorAll('.section-nav a').forEach(navLink => {
+            navLink.classList.remove('active');
+        });
+
+        const targetSection = document.getElementById(sectionId);
+        console.log('Target section:',targetSection);
+        if(targetSection) {
+            targetSection.classList.add('active');
+            link.classList.add('active');
+            console.log('Added active to:',sectionId);
+        }
+    });
+});
+
+// Lightbox
+function openLightbox(src) {
+    const lightbox = document.querySelector('.lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+    lightboxImg.src = src;
+    lightbox.style.display = 'block';
+    document.body.classList.add('lightbox-open');
+}
+
+function closeLightbox() {
+    const lightbox = document.querySelector('.lightbox');
+    lightbox.style.display = 'none';
+    document.body.classList.remove('lightbox-open');
+}
+
+// Close lightbox with escape key
+document.addEventListener('keydown',(e) => {
+    if(e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
+// Set initial states
+document.body.setAttribute('data-lang','en');
+document.querySelector('[data-section="home"]').classList.add('active');
+
+
+// Events slider functionality
+const slides = document.querySelectorAll('.event-slide');
+const prevBtn = document.querySelector('.slider-btn.prev');
+const nextBtn = document.querySelector('.slider-btn.next');
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+
+    currentSlide = index;
+    if(currentSlide >= slides.length) currentSlide = 0;
+    if(currentSlide < 0) currentSlide = slides.length - 1;
+
+    slides[currentSlide].classList.add('active');
+}
+
+prevBtn?.addEventListener('click',() => showSlide(currentSlide - 1));
+nextBtn?.addEventListener('click',() => showSlide(currentSlide + 1));
+
+// Show first slide initially
+showSlide(0);
+
+// Add scroll detection for header
+window.addEventListener('scroll',() => {
+    const header = document.querySelector('header');
+    if(window.scrollY > 10) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
