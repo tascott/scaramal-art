@@ -213,6 +213,16 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
     height: 100vh;
 }
 
+/* #sectionPin2 .point {
+    position: relative;
+    top: 46px;
+    z-index: 10000;
+}
+
+#sectionPin2 .flip-container:first-of-type {
+    margin-top: -35px;
+} */
+
 .pin-wrap-sticky {
     height: 100vh;
     width: 100vw;
@@ -279,6 +289,47 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
     text-decoration: none;
     transition: all 0.3s ease;
 }
+
+/* Image Overlay Styles */
+.flip-container {
+    cursor: pointer;
+}
+
+.front {
+    position: relative;
+}
+
+.front img {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.flip-container.flipped .front img {
+    opacity: 0.3;
+}
+
+.flip-container.flipped .description {
+    opacity: 1;
+}
+
 
 .contact-info a:hover {
     opacity: 0.7;
