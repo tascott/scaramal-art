@@ -237,7 +237,7 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
     width: max-content;
 }
 
-.pin-wrap > figure {
+.pin-wrap>figure {
     min-width: 60vmax;
     padding: 0 5vmax;
     margin: 0;
@@ -247,20 +247,20 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
     align-items: center;
 }
 
-.pin-wrap > figure img {
+.pin-wrap>figure img {
     width: auto;
     height: 70vh;
     max-width: 100%;
     object-fit: contain;
 }
 
-.pin-wrap > figure figcaption {
+.pin-wrap>figure figcaption {
     font-size: 1.1rem;
     line-height: 1.4;
     opacity: 0.8;
 }
 
-.pin-wrap > h2 {
+.pin-wrap>h2 {
     min-width: 40vmax;
     padding: 0 1vmax;
 }
@@ -315,11 +315,40 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     text-align: center;
     flex-direction: column;
     padding: 20px;
+    overflow-y: auto;
+}
+
+.description h3 {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.description p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 90%;
+    padding: 0 20px 20px;
+    margin: 0 auto;
+}
+
+.description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.description::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.description::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
 }
 
 .flip-container.flipped .front img {
@@ -329,7 +358,6 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
 .flip-container.flipped .description {
     opacity: 1;
 }
-
 
 .contact-info a:hover {
     opacity: 0.7;
@@ -346,12 +374,12 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
         padding-top: 2rem;
     }
 
-    .pin-wrap > figure img {
+    .pin-wrap>figure img {
         height: 50vh;
         width: auto;
     }
 
-    .pin-wrap > figure {
+    .pin-wrap>figure {
         min-width: 80vw;
         padding: 0 2vmax;
     }
