@@ -67,11 +67,13 @@ body[data-mode="dark"] h1 {
 }
 
 @media (max-width: 768px) {
+
     .mode-toggle .sun-icon,
     .mode-toggle .moon-icon {
         width: 24px;
         height: 24px;
     }
+
     .lang-toggle .lang-text {
         font-size: 14px;
         width: 26px;
@@ -95,6 +97,7 @@ body[data-mode="dark"] h1 {
     border-radius: 50%;
     background: transparent;
     transition: all 0.3s ease;
+    display: none;
 }
 
 .lang-toggle:hover {
