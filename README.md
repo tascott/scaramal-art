@@ -8,7 +8,7 @@ View the site at [tascott.co.uk/scaramal-art](https://tascott.co.uk/scaramal-art
 
 - Responsive design for all devices
 - Dark/Light mode that respects system preferences
-- English/Italian language switching
+- English/Italian language switching (removed while waiting for translations)
 - Horizontal scrolling galleries using GSAP
 - Image lightbox for detailed viewing
 - Event slider for exhibitions and news

@@ -398,7 +398,7 @@ section:not(#sectionPin, .pin-wrap-sticky, #description) {
     top: 40vh;
     left: 10vw;
     width: 75vw;
-    /* display: none; */
+    display: none;
 }
 
 .events-section h2 {
